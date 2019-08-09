@@ -12,7 +12,7 @@ whenever a voicemail is left for a given mailbox, send a notification to a slack
 
 ## config.json sections/values
 
-(this goes in the config folder as `config.json` see example_config.json for a sample file)
+By default, slasterisk will look in `./config/config.json` for its config file. This location can be changed with the `-config` flag.
 
 ### slackinfo
 

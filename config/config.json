@@ -1,0 +1,10 @@
+{
+    "slackinfo":{
+        "token": "xoxp-622598621554-633496051732-715628318678-0cad79265abe7865f3ab897529401021",
+        "channel_name": "testing"
+    },
+    "asteriskinfo":{
+        "vm_dir": "/var/spool/asterisk/voicemail/default/",
+        "extension": "1113"
+    }
+}

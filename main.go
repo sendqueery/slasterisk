@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"encoding/json"
+	"flag"
 	"fmt"
 	"log"
 	"os"
@@ -26,7 +27,8 @@ type Config struct {
 func main() {
 
 	// Test stuff for JSON parsing
-	configData := getJSONConfig()
+	configFlag := flag.String("config", "./config/config.json", "relative or absolute path to your config.json file")
+	configData := getJSONConfig(configFlag)
 	test, _ := json.MarshalIndent(configData, "", "\t")
 	fmt.Printf("%v\n", string(test))
 
@@ -65,12 +67,12 @@ func main() {
 	fmt.Println(info)
 }
 
-func getJSONConfig() (configData *Config) {
+func getJSONConfig(path string) (configData *Config) {
 	// Initialize our empty struct
 	data := new(Config)
 
 	// Make sure our config file exists
-	if file, err := os.Open(`C:\Users\amaheu\go\src\github.com\sendqueery\slasterisk\config\config.json`); err != nil {
+	if file, err := os.Open(path); err != nil {
 		log.Fatalln(err)
 	} else {
 		// Don't close our reader until we're done here
