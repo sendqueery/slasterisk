@@ -1,0 +1,10 @@
+{
+    "slackinfo":{
+        "token": "xoxp-slack-api-token-goes-here",
+        "channel_name": "my-slack-channel"
+    },
+    "asteriskinfo":{
+        "vm_dir": "/var/spool/asterisk/voicemail/default/",
+        "extension": "1234"
+    }
+}
