@@ -28,7 +28,7 @@ func main() {
 
 	// Test stuff for JSON parsing
 	configFlag := flag.String("config", "./config/config.json", "relative or absolute path to your config.json file")
-	configData := getJSONConfig(configFlag)
+	configData := getJSONConfig(*configFlag)
 	test, _ := json.MarshalIndent(configData, "", "\t")
 	fmt.Printf("%v\n", string(test))
 

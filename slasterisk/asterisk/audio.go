@@ -1,14 +1,11 @@
 package slasterisk
 
 import (
-	"io"
 	"os"
-
-	"github.com/sunicy/go-lame"
 )
 
 func CheckFilePath(filePath string) (exists bool, err error) {
-	_, err := os.Stat(filePath)
+	_, err = os.Stat(filePath)
 	if err == nil {
 		return true, nil
 	}
@@ -27,7 +24,8 @@ func MakeNeededDirs(path string) (exists bool, err error) {
 	}
 }
 
-func WavToMp3(wavFile string, mp3File string) {
+/*
+func WavToMp3(wavFileName string, mp3FileName string) {
 	// open files
 	wavFile, _ := os.OpenFile(wavFileName, os.O_RDONLY, 0555)
 	mp3File, _ := os.OpenFile(mp3FileName, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0755)
@@ -45,3 +43,4 @@ func WavToMp3(wavFile string, mp3File string) {
 	io.Copy(wr, wavFile) // wavFile's pos has been changed!
 	wr.Close()
 }
+*/

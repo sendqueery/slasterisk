@@ -10,7 +10,7 @@ import (
 	"strconv"
 )
 
-type VmInfo struct {
+type VMInfo struct {
 	Timestamp int64
 	CallerID  string
 	Duration  int
@@ -44,7 +44,7 @@ func GetLastVM(dir string, mailbox string) {
 	fmt.Println(newestFile)
 }
 
-func ParseVMInfo(path string) (info *VmInfo) {
+func ParseVMInfo(path string) (info *VMInfo) {
 	file, err := os.Open(path)
 
 	if err != nil {
@@ -69,7 +69,7 @@ func ParseVMInfo(path string) (info *VmInfo) {
 		}
 	}
 
-	info = new(VmInfo)
+	info = new(VMInfo)
 	info.CallerID = parsedInfo["callerid"]
 	info.Duration, _ = strconv.Atoi(parsedInfo["duration"])
 	info.Timestamp, _ = strconv.ParseInt(parsedInfo["origtime"], 10, 64)
